@@ -82,7 +82,7 @@ RUN . ./dependencies.sh \
     && git remote add origin https://github.com/Putnam3145/auxmos
     && git fetch --depth 1 origin "${AUXMOS_VERSION}" \
     && git checkout FETCH_HEAD \
-    && env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --release --target i686-unknown-linux-gnu --features "all_reaction_hooks"
+    && env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target i686-unknown-linux-gnu --features "all_reaction_hooks"
 
 # final = byond + runtime deps + rust_g + build
 FROM byond
