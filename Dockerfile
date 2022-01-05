@@ -54,8 +54,8 @@ RUN apt-get install -y --no-install-recommends \
         pkg-config:i386 \
         libssl-dev:i386 \
         gcc-multilib \
-        g++-multilib 
-        libc6-i386 
+        g++-multilib \
+        libc6-i386 \
         zlib1g-dev:i386 \
         git \
     && git init \
