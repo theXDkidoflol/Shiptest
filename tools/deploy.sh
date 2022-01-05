@@ -33,5 +33,5 @@ cp -r strings/* $1/strings/
 #find $1/_maps -name "*.dm" -type f -delete
 
 #dlls on windows
-cp rust_g* $1/ || true
+cp rust_g.* $1/ || true
 cp auxtools/*auxmos.* $1/auxtools/ || true
