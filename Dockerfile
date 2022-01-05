@@ -65,8 +65,8 @@ WORKDIR /rust_g
 COPY dependencies.sh .
 
 RUN . ./dependencies.sh \
-    && git init
-    && git remote add origin https://github.com/tgstation/rust-g
+    && git init \
+    && git remote add origin https://github.com/tgstation/rust-g \
     && git fetch --depth 1 origin "${RUST_G_VERSION}" \
     && git checkout FETCH_HEAD \
     && env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --release --target i686-unknown-linux-gnu
@@ -78,8 +78,8 @@ WORKDIR /auxmos
 COPY dependencies.sh .
 
 RUN . ./dependencies.sh \
-    && git init
-    && git remote add origin https://github.com/Putnam3145/auxmos
+    && git init \
+    && git remote add origin https://github.com/Putnam3145/auxmos \
     && git fetch --depth 1 origin "${AUXMOS_VERSION}" \
     && git checkout FETCH_HEAD \
     && env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target i686-unknown-linux-gnu --features "all_reaction_hooks"
