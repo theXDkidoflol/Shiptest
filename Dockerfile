@@ -85,7 +85,7 @@ RUN . ./dependencies.sh \
     && git remote add origin https://github.com/Putnam3145/auxmos \
     && git fetch --depth 1 origin "${AUXMOS_VERSION}" \
     && git checkout FETCH_HEAD \
-    && cargo rustc --target=i686-unknown-linux-gnu --release --features "all_reaction_hooks" -- -C target-cpu=native
+    && ~/.cargo/bin/cargo rustc --target=i686-unknown-linux-gnu --release --features "all_reaction_hooks" -- -C target-cpu=native
 
 # final = byond + runtime deps + rust_g + build
 FROM byond
